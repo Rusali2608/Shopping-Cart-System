@@ -1,0 +1,20 @@
+package com.product.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.product.model.Product;
+
+public interface ProductService {
+		//Admin and User
+		List<Product> getAllProducts();
+
+		Optional<Product> getProductByName(String productName);
+
+		//Admin Controller
+		Product addProduct(Product product);
+
+		String updateProduct(Product product,String productName);
+
+		String deleteByProductName(Product product, String productName);
+}

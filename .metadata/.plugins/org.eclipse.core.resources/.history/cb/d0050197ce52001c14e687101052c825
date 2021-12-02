@@ -1,0 +1,66 @@
+package com.example.demo.cart.model;
+
+import java.util.Objects;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+public class Cart {
+	
+	@Id
+	private int cartId;
+	private double totalPrice;
+	private Items item;
+	public int getCartId() {
+		return cartId;
+	}
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
+	}
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	public Items getItem() {
+		return item;
+	}
+	public void setItem(Items item) {
+		this.item = item;
+	}
+	public Cart(int cartId, double totalPrice, Items item) {
+		super();
+		this.cartId = cartId;
+		this.totalPrice = totalPrice;
+		this.item = item;
+	}
+	public Cart() {
+		
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Cart [cartId=" + cartId + ", totalPrice=" + totalPrice + ", item=" + item + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(cartId, item, totalPrice);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cart other = (Cart) obj;
+		return cartId == other.cartId && Objects.equals(item, other.item)
+				&& Double.doubleToLongBits(totalPrice) == Double.doubleToLongBits(other.totalPrice);
+	}
+	
+	
+	
+}

@@ -1,0 +1,4 @@
+server.port=8083
+spring.application.name=product-service
+spring.data.mongodb.uri=mongodb+srv://guest:1234@cluster0.ovr37.mongodb.net/ProductServiceDBretryWrites=true&w=majority
+spring.data.mongodb.database=ProductServiceDB

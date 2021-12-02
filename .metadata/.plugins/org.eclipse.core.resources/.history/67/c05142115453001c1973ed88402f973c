@@ -1,0 +1,13 @@
+package com.product.controller;
+
+import org.apache.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+@ControllerAdvice //it will handle exception globally
+public class ProductExceptionController {
+	@ExceptionHandler(EmptyInputException.class)
+	public ResponseEntity<String> handleEmptyInput(EmptyInputException emptyInputException){
+		return new  ResponseEntity<String> ("Input Field is empty",HttpStatus.)
+}

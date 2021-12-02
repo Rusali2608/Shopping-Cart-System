@@ -1,0 +1,19 @@
+package com.example.demo.ewallet.model;
+
+public class Ewallet {
+	private String walletId;
+	
+	private double currentBalance;
+	public String getEwalletId() {
+		return walletId;
+		}
+		public void setEwalletId(String walletId) {
+		this.walletId = walletId;
+		}
+		public double getCurrentBalance() {
+		return currentBalance;
+		}
+		public void setCurrentBalance(double currentBalance) {
+		this.currentBalance = currentBalance;
+		}
+}

@@ -1,0 +1,75 @@
+package com.product.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.product.model.Product;
+
+import com.product.service.ProductService;
+
+
+@RestController
+@RequestMapping("/product")
+public class ProductResource {
+	@Autowired 
+	ProductService productserv;
+	
+	@GetMapping("/allproducts")
+	public List<Product> getAllProducts(){
+		
+		return productserv.getAllProducts();
+	}
+	
+	@GetMapping("/productbyname/{productName}")
+	public List<Product> getProductByName(@PathVariable String productName) {
+		
+		return productserv.getProductByName(productName);
+	}
+
+	
+	  	@GetMapping("/productbyCategory/{category}") 
+	  	public List<Product> getProductByCategory(@PathVariable String category){
+	  
+		  	return productserv.getProductByCategory(category);
+	  }
+	  
+	  @GetMapping("productbytype/{productType}")
+	  public List<Product> getProductByType(@PathVariable String productType){
+	  
+		  return productserv.getProductByType(productType); 
+	  }
+	 
+	  
+	  
+	  @PostMapping("/addproduct")
+	  public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+		Product pro = productserv.addProduct(product);
+		  
+		return new ResponseEntity<Product>(pro, HttpStatus.CREATED);
+	  }
+	  
+	  @PutMapping("/updateProduct/{productId}")
+	  public Product updateProduct(@RequestBody Product product, @PathVariable int productId) {
+		
+		return productserv.updateProduct(product, productId);
+	  }
+	  
+	 
+	  @DeleteMapping("/deletebyproductname/{productName}")
+	  public Product deleteByProductName(@PathVariable String productName ) {
+		
+		return productserv.deleteByProductName(productName);
+	}
+	
+}
