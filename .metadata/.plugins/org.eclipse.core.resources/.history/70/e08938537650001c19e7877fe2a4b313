@@ -1,5 +1,0 @@
-package com.example.demo.ewallet.repository;
-
-public interface StatementRepository {
-	
-}

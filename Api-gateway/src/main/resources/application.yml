@@ -1,7 +1,21 @@
 server:
   port: 8085
-  
+   
 spring:  cloud:    gateway:      routes:
       #Route Mapping      - id: product-service               #RouteIdentifiler
         uri: http://localhost:8083/       #Respective microservice URL which needs to be   mapped
-        predicates:        - Path= /product/**   
+        predicates:        - Path= /api/product/**   
+      - id: cart-service               #RouteIdentifiler
+        uri: http://localhost:8084/       #Respective microservice URL which needs to be   mapped
+        predicates:
+        - Path= /api/cart/**
+        
+      - id: order-service               #RouteIdentifiler
+        uri: http://localhost:8086/       #Respective microservice URL which needs to be   mapped
+        predicates:
+        - Path= /api/order/**
+        
+      
+   
+   
+   

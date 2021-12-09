@@ -1,2 +1,0 @@
-spring.data.mongodb.uri=mongodb+srv://rusali:rusali1234@cluster0.ovr37.mongodb.net/productservice?retryWrites=true&w=majority
-spring.data.mongodb.database=productservice

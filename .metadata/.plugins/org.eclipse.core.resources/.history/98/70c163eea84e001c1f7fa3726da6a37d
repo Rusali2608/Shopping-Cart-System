@@ -1,7 +1,0 @@
-package com.example.demo.ewallet.model;
-
-public class Ewallet {
-	private String walletId;
-	
-	private double currentBalance;
-}

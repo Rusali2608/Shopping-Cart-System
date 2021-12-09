@@ -24,10 +24,12 @@ public class ProductResource {
 	@Autowired //in order to provide loose coupling
 	ProductService productserv;
 	
+	//it will get all the list of products
 	@GetMapping("/getallproduct")
 	public List<Product> getAllProducts() {
 	return productserv.getAllProducts();
 	}
+	
 	@GetMapping("/getProductById/{productId}")
 	public Optional<Product> getProductById(@PathVariable int productId){
 

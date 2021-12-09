@@ -11,5 +11,5 @@ import com.product.model.Product;
 public interface ProductRepository extends MongoRepository<Product,Integer> {
 	
 	
-	
+
 }
